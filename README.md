@@ -1,71 +1,41 @@
-# antigravity-ignore README
+# 🚀 Antigravity Ignore
 
-This is the README for your extension "antigravity-ignore". After writing up a brief description, we recommend including the following sections.
+**Smart `.gitignore` management engineered for modern monorepos.**
 
-## Features
+Eliminate the friction of maintaining Git rules. `Antigravity Ignore` provides intelligent, workspace-aware pathing right from your VS Code Explorer context menu. Stop manually typing file paths, and stop creating accidental "shadow ignores" in your project subdirectories.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## ✨ Features
 
-For example if there is an image subfolder under your extension project workspace:
+- **Contextual Right-Click:** Simply right-click any file or folder in your Explorer and click `Antigravity: Add to .gitignore`.
+- **Smart Path Normalization:** Automatically calculates the relative path from the `.gitignore` to your clicked file, and strictly formats it with Git-compliant POSIX forward-slashes (even on Windows).
+- **Duplicate Prevention:** Safely scans your `.gitignore` to ensure the rule isn't already there.
+- **Hoisting Intelligence:** If you try to add an ignore rule inside a nested folder (like `/frontend`) but a root `.gitignore` exists, Antigravity steps in. It intelligently prompts you to "Hoist" the rule up to the project root, keeping your repository clean and avoiding untraceable "shadow" ignores.
 
-\!\[feature X\]\(images/feature-x.png\)
+## 🛠️ Usage
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+1. Open your project in VS Code.
+2. In the Explorer pane, **Right-Click** the file or folder you want to ignore.
+3. Select **"Antigravity: Add to .gitignore"** from the context menu.
+4. If a nested `.gitignore` conflict is detected, you will be prompted to choose where to safely deposit the rule.
+5. Click **Open File** on the success pop-up to instantly verify the change.
 
-## Requirements
+## ⚙️ Installation (Development)
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+To contribute or run this extension locally:
 
-## Extension Settings
+```bash
+# Clone the repository
+git clone https://github.com/Dakshinde/antigravity-ignore.git
+cd antigravity-ignore
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+# Install dependencies
+npm install
 
-For example:
+# Compile the extension
+npm run compile
+```
 
-This extension contributes the following settings:
+Press **F5** in VS Code to launch the Extension Development Host window and test the extension out.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## 📝 License
+This project is licensed under the [MIT License](LICENSE).
